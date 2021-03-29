@@ -7,8 +7,16 @@
 //
 
 import Foundation
-struct User {
-    let name: String
-    let email: String
-    let Birthday: String
+struct User: Decodable {
+    let results: [results]
 }
+
+struct results: Decodable {
+    let name: name
+}
+
+struct name: Decodable {
+    let first: String
+    let last: String
+}
+

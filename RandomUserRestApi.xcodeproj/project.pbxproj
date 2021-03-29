@@ -56,6 +56,7 @@
 		27F0965322C551BD00BC63D1 /* RandomUserRestApi */ = {
 			isa = PBXGroup;
 			children = (
+				67E50ED6261269E20099BD96 /* Services */,
 				67BF727B2611F03E00057E97 /* Model */,
 				27F0965422C551BD00BC63D1 /* AppDelegate.swift */,
 				27F0965622C551BD00BC63D1 /* SceneDelegate.swift */,
@@ -73,6 +74,13 @@
 				67BF727C2611F05700057E97 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		67E50ED6261269E20099BD96 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
