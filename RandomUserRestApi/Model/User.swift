@@ -13,10 +13,23 @@ struct User: Decodable {
 
 struct results: Decodable {
     let name: name
+    let email: String
+    let dob: dob
+    let phone: String
+    let picture: picture
 }
 
 struct name: Decodable {
     let first: String
     let last: String
+}
+
+struct dob: Decodable {
+    let date: String
+    let age: Int
+}
+
+struct picture: Decodable {
+    let medium: String
 }
 
