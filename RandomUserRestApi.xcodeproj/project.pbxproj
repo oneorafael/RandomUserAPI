@@ -12,6 +12,8 @@
 		27F0965C22C551BD00BC63D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F0965A22C551BD00BC63D1 /* Main.storyboard */; };
 		27F0965E22C551BE00BC63D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F0965D22C551BE00BC63D1 /* Assets.xcassets */; };
 		27F0966122C551BE00BC63D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F0965F22C551BE00BC63D1 /* LaunchScreen.storyboard */; };
+		6758BFBF2615EFEA005D6CFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6758BFBE2615EFEA005D6CFD /* User.swift */; };
+		6758BFC52615F05D005D6CFD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6758BFC42615F05D005D6CFD /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		27F0965D22C551BE00BC63D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27F0966022C551BE00BC63D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27F0966222C551BE00BC63D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6758BFBE2615EFEA005D6CFD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6758BFC42615F05D005D6CFD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		27F0964822C551BD00BC63D1 = {
 			isa = PBXGroup;
 			children = (
+				6758BFC42615F05D005D6CFD /* .gitignore */,
 				27F0965322C551BD00BC63D1 /* RandomUserRestApi */,
 				27F0965222C551BD00BC63D1 /* Products */,
 			);
@@ -54,6 +59,7 @@
 		27F0965322C551BD00BC63D1 /* RandomUserRestApi */ = {
 			isa = PBXGroup;
 			children = (
+				6758BFBD2615EFDD005D6CFD /* Model */,
 				27F0965422C551BD00BC63D1 /* AppDelegate.swift */,
 				27F0965622C551BD00BC63D1 /* SceneDelegate.swift */,
 				27F0965A22C551BD00BC63D1 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				27F0966222C551BE00BC63D1 /* Info.plist */,
 			);
 			path = RandomUserRestApi;
+			sourceTree = "<group>";
+		};
+		6758BFBD2615EFDD005D6CFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6758BFBE2615EFEA005D6CFD /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6758BFC52615F05D005D6CFD /* .gitignore in Resources */,
 				27F0966122C551BE00BC63D1 /* LaunchScreen.storyboard in Resources */,
 				27F0965E22C551BE00BC63D1 /* Assets.xcassets in Resources */,
 				27F0965C22C551BD00BC63D1 /* Main.storyboard in Resources */,
@@ -137,6 +152,7 @@
 			files = (
 				27F0965522C551BD00BC63D1 /* AppDelegate.swift in Sources */,
 				27F0965722C551BD00BC63D1 /* SceneDelegate.swift in Sources */,
+				6758BFBF2615EFEA005D6CFD /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
