@@ -30,6 +30,6 @@ struct dob: Decodable {
 }
 
 struct picture: Decodable {
-    let medium: String
+    let large: String
 }
 

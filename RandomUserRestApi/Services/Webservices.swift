@@ -17,4 +17,21 @@ class Webservices {
             completion(userData?.results)
         }.resume()
     }
+    
+    func fetchImage(urlString: String, completionHandler: @escaping (_ data: Data?) -> ()) {
+        let session = URLSession.shared
+        let url = URL(string: urlString)
+        guard let path = url else {return}
+            
+        let dataTask = session.dataTask(with: path) { (data, response, error) in
+            if error != nil {
+                print("Error fetching the image!")
+                completionHandler(nil)
+            } else {
+                completionHandler(data)
+            }
+        }
+            
+        dataTask.resume()
+    }
 }

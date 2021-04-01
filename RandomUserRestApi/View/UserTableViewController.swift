@@ -51,6 +51,15 @@ class UserTableViewController: UITableViewController {
     }
     
 //    TODO: Passar dado para a view após tocar em uma celula
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UserDetailViewController {
+            destination.userResult = userVM.result[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
     
     /*
     // Override to support rearranging the table view.

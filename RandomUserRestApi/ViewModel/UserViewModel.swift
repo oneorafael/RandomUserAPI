@@ -17,7 +17,7 @@ struct UserViewModel {
     var result: results
     var first: String {return result.name.first}
     var last: String {return result.name.last}
-    var medium: String {return result.picture.medium}
+    var large: String {return result.picture.large}
     var date: String {return result.dob.date}
     var age: Int {return result.dob.age}
 }
