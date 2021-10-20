@@ -12,6 +12,7 @@
 		27F0965E22C551BE00BC63D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F0965D22C551BE00BC63D1 /* Assets.xcassets */; };
 		27F0966122C551BE00BC63D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F0965F22C551BE00BC63D1 /* LaunchScreen.storyboard */; };
 		672DBBF92720C4E5002088E6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DBBF82720C4E5002088E6 /* MainViewController.swift */; };
+		672DBBFB2720C8BD002088E6 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DBBFA2720C8BC002088E6 /* UserDetailsViewController.swift */; };
 		6758BFBF2615EFEA005D6CFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6758BFBE2615EFEA005D6CFD /* User.swift */; };
 		6758BFC52615F05D005D6CFD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6758BFC42615F05D005D6CFD /* .gitignore */; };
 		6758BFC92615F0A4005D6CFD /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6758BFC82615F0A4005D6CFD /* Webservices.swift */; };
@@ -28,6 +29,7 @@
 		27F0966022C551BE00BC63D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27F0966222C551BE00BC63D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		672DBBF82720C4E5002088E6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		672DBBFA2720C8BC002088E6 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		6758BFBE2615EFEA005D6CFD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6758BFC42615F05D005D6CFD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6758BFC82615F0A4005D6CFD /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				6758BFD12615F109005D6CFD /* UserTableViewController.swift */,
 				6758BFD42615F147005D6CFD /* UserDetailViewController.swift */,
 				672DBBF82720C4E5002088E6 /* MainViewController.swift */,
+				672DBBFA2720C8BC002088E6 /* UserDetailsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,7 +144,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Rafael Oliveira";
 				TargetAttributes = {
 					27F0965022C551BD00BC63D1 = {
@@ -193,6 +196,7 @@
 				6758BFD22615F109005D6CFD /* UserTableViewController.swift in Sources */,
 				6758BFBF2615EFEA005D6CFD /* User.swift in Sources */,
 				672DBBF92720C4E5002088E6 /* MainViewController.swift in Sources */,
+				672DBBFB2720C8BD002088E6 /* UserDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +240,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -296,6 +301,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -329,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LW7U9NL7A7;
 				INFOPLIST_FILE = RandomUserRestApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -346,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LW7U9NL7A7;
 				INFOPLIST_FILE = RandomUserRestApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

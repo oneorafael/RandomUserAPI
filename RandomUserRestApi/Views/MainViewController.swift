@@ -46,7 +46,7 @@ class MainViewController: UIViewController  {
         return appSubTitle
     }()
     
-    //NextBtn
+    //NextBtn "prosseguir"
     private lazy var nextBtn:UIButton = {
         let nextBtn = UIButton()
         nextBtn.setTitle("Iniciar", for: .normal)
@@ -57,9 +57,15 @@ class MainViewController: UIViewController  {
         nextBtn.layer.cornerRadius = 10
         nextBtn.clipsToBounds = true
         nextBtn.translatesAutoresizingMaskIntoConstraints = false
+        nextBtn.addTarget(self, action: #selector(displayNextPage), for: .touchUpInside)
 
         return nextBtn
     }()
+    
+    @objc func displayNextPage(){
+        let vc = UserDetailsViewController()
+        self.present(vc, animated: true, completion: nil)
+    }
 
     //StackView
     private lazy var verticalStack:UIStackView = {
