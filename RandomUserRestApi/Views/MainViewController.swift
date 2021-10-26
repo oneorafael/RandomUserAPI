@@ -37,7 +37,7 @@ class MainViewController: UIViewController  {
     //AppSubTitle
     private lazy var appSubTitle:UILabel = {
         let appSubTitle = UILabel()
-        appSubTitle.text = "Aplicativo gerador de dados pessoais fakes utilizando a api"
+        appSubTitle.text = "Dados pessoais são gerados utilizando a api randomuser.me"
         appSubTitle.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         appSubTitle.textColor = .secondaryLabel
         appSubTitle.translatesAutoresizingMaskIntoConstraints = false
