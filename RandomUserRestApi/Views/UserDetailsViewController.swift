@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 class UserDetailsViewController:UIViewController {
 //    MARK: - Properties
+    
+    //close btn
     private lazy var closeBtn:UIButton = {
        let closeBtn = UIButton()
         let _image = UIImage(systemName: "xmark.circle")
@@ -21,6 +23,8 @@ class UserDetailsViewController:UIViewController {
         closeBtn.addTarget(self, action: #selector(dismissWindow), for: .touchUpInside)
         return closeBtn
     }()
+    
+    //image
     private lazy var PersonImage: UIImageView = {
         let personIMG = UIImage()
         let PersonImage = UIImageView()
@@ -30,27 +34,34 @@ class UserDetailsViewController:UIViewController {
         return PersonImage
     }()
     
-    private lazy var titleLabel:UILabel = {
+    // name
+    private lazy var nameLabel:UILabel = {
         let titleLabel = UILabel()
         titleLabel.text = ""
         titleLabel.font = UIFont.systemFont(ofSize: 33, weight: .black)
         titleLabel.textColor = .gray
         return titleLabel
     }()
+    
+    //age
     private lazy var birthdayLabel:UILabel = {
         let birthdayLabel = UILabel()
-        birthdayLabel.text = "data de nascimento"
+        birthdayLabel.text = ""
         birthdayLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         birthdayLabel.textColor = .gray
         return birthdayLabel
     }()
+    
+    //email
     private lazy var emailLabel:UILabel = {
         let emailLabel = UILabel()
-        emailLabel.text = "Email"
+        emailLabel.text = ""
         emailLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         emailLabel.textColor = .gray
         return emailLabel
     }()
+    
+    //phone
     private lazy var phoneLabel:UILabel = {
         let phoneLabel = UILabel()
         phoneLabel.text = "Telefone"
@@ -63,25 +74,31 @@ class UserDetailsViewController:UIViewController {
     private lazy var verticalStack:UIStackView = {
         let verticalStack = UIStackView()
         verticalStack.axis = .vertical
-        verticalStack.addArrangedSubview(titleLabel)
+        verticalStack.addArrangedSubview(nameLabel)
         verticalStack.addArrangedSubview(birthdayLabel)
         verticalStack.addArrangedSubview(emailLabel)
         verticalStack.addArrangedSubview(phoneLabel)
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
         return verticalStack
     }()
+    
+    //close view when x button is tapped
     @objc func dismissWindow(){
         self.dismiss(animated: true, completion: nil)
     }
+    private var userVM:UserViewModel!
     
-    private var userVM:resultViewModel!
+//    MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
-        setup()
+        displayData()
     }
     
+//    MARK: - Functions
+    
+    //add subviews and set constraints
     private func  setupViews() {
         view.addSubview(closeBtn)
         view.addSubview(PersonImage)
@@ -100,21 +117,20 @@ class UserDetailsViewController:UIViewController {
         ])
     }
 
-    private func setup(){
+    //get data using webservice class and display
+    private func displayData(){
         Webservices().getData { results in
             guard let dataResult = results else {return}
-            self.userVM = resultViewModel(result: dataResult)
+            self.userVM = UserViewModel(result: dataResult)
             DispatchQueue.main.async {
                 self.birthdayLabel.text = "\(self.userVM.age) anos"
                 self.emailLabel.text = "Email: \(self.userVM.email)"
-                self.titleLabel.text = "\(self.userVM.first) \(self.userVM.last)"
+                self.nameLabel.text = "\(self.userVM.first) \(self.userVM.last)"
                 self.phoneLabel.text = "Telefone: \(self.userVM.phone)"
                 let picURL = URL(string: self.userVM.large)!
                 guard let imageData = try? Data(contentsOf: picURL) else { return }
-
                 let image = UIImage(data: imageData)
                 self.PersonImage.image = image
-                
             }
         }
     }

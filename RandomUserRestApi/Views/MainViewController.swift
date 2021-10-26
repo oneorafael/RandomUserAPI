@@ -62,6 +62,7 @@ class MainViewController: UIViewController  {
         return nextBtn
     }()
     
+    // Open UserDetailsViewController and display data
     @objc func displayNextPage(){
         let vc = UserDetailsViewController()
         self.present(vc, animated: true, completion: nil)
@@ -84,14 +85,16 @@ class MainViewController: UIViewController  {
         setupLayout()
     }
     
+    //add subViews and setupConstraints
     private func setupLayout() {
         view.addSubview(verticalStack)
         view.addSubview(nextBtn)
         setupConstraints()
     }
     
+    
+    // set constraints on app
     private func setupConstraints() {
-        
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             // vertical Stack
