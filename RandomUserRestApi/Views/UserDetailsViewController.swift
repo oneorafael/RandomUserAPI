@@ -22,19 +22,17 @@ class UserDetailsViewController:UIViewController {
         return closeBtn
     }()
     private lazy var PersonImage: UIImageView = {
-        let personIMG = UIImage(named: "edgar")
+        let personIMG = UIImage()
         let PersonImage = UIImageView()
         PersonImage.image = personIMG
         PersonImage.contentMode = .scaleAspectFit
         PersonImage.translatesAutoresizingMaskIntoConstraints = false
-//        PersonImage.layer.cornerRadius = 50
-//        PersonImage.clipsToBounds = true
         return PersonImage
     }()
     
     private lazy var titleLabel:UILabel = {
         let titleLabel = UILabel()
-        titleLabel.text = "Edgar"
+        titleLabel.text = ""
         titleLabel.font = UIFont.systemFont(ofSize: 33, weight: .black)
         titleLabel.textColor = .gray
         return titleLabel
@@ -75,10 +73,13 @@ class UserDetailsViewController:UIViewController {
     @objc func dismissWindow(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+    private var userVM:resultViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
+        setup()
     }
     
     private func  setupViews() {
@@ -97,5 +98,24 @@ class UserDetailsViewController:UIViewController {
             verticalStack.topAnchor.constraint(equalTo: PersonImage.bottomAnchor, constant: 30),
             verticalStack.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
         ])
+    }
+
+    private func setup(){
+        Webservices().getData { results in
+            guard let dataResult = results else {return}
+            self.userVM = resultViewModel(result: dataResult)
+            DispatchQueue.main.async {
+                self.birthdayLabel.text = "\(self.userVM.age) anos"
+                self.emailLabel.text = "Email: \(self.userVM.email)"
+                self.titleLabel.text = "\(self.userVM.first) \(self.userVM.last)"
+                self.phoneLabel.text = "Telefone: \(self.userVM.phone)"
+                let picURL = URL(string: self.userVM.large)!
+                guard let imageData = try? Data(contentsOf: picURL) else { return }
+
+                let image = UIImage(data: imageData)
+                self.PersonImage.image = image
+                
+            }
+        }
     }
 }

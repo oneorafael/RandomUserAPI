@@ -7,14 +7,14 @@
 //
 
 import Foundation
-class Webservices {
+struct Webservices {
     let path = "https://randomuser.me/api/"
     
-    func getData(completion:@escaping([results]?)->()){
+    func getData(completion:@escaping(results?)->()){
         URLSession.shared.dataTask(with: URL(string: path)!) { (data, response, error) in
             guard let data = data else {return}
             let userData = try? JSONDecoder().decode(User.self, from: data)
-            completion(userData?.results)
+            completion(userData?.results.first)
         }.resume()
     }
 }
